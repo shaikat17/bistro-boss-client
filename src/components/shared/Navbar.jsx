@@ -2,11 +2,11 @@ import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
     const navLinks = <>
-    <NavLink className="uppercase" to="/">Home</NavLink>
-    <NavLink className="uppercase" to="/contact-us">Contact Us</NavLink>
-    <NavLink className="uppercase" to="/dashboard">Dashboard</NavLink>
-    <NavLink className="uppercase" to="/our-menu">Our Menu</NavLink>
-    <NavLink className="uppercase" to="/order-food">Order Food</NavLink>
+    <NavLink className={({isActive}) => isActive ? "bg-orange-400 p-2 rounded" : ""} to="/">Home</NavLink>
+    <NavLink className={({isActive}) => isActive ? "bg-orange-400 p-2 rounded" : ""} to="/contact-us">Contact Us</NavLink>
+    <NavLink className={({isActive}) => isActive ? "bg-orange-400 p-2 rounded" : ""} to="/dashboard">Dashboard</NavLink>
+    <NavLink className={({isActive}) => isActive ? "bg-orange-400 p-2 rounded" : ""} to="/our-menu">Our Menu</NavLink>
+    <NavLink className={({isActive}) => isActive ? "bg-orange-400 p-2 rounded" : ""} to="/order-food">Order Food</NavLink>
     </>
     return (
         <div className="navbar bg-base-100">
@@ -22,7 +22,7 @@ const Navbar = () => {
     <Link className="btn btn-ghost normal-case text-xl">Bistro Boss</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1 gap-3">
+    <ul className="menu menu-horizontal px-1 gap-3 items-center">
       {navLinks}
     </ul>
   </div>
