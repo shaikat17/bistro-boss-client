@@ -3,15 +3,15 @@ import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa"
 const Footer = () => {
   return (
     <div className="flex flex-col gap-0 m-0 text-white">
-      <footer className="footer gap-0 flex">
-        <div className="bg-[#1F2937] w-1/2 h-72 flex flex-col justify-center items-center py-10">
+      <footer className="footer gap-0 flex flex-col sm:flex-row">
+        <div className="bg-[#1F2937] w-full sm:w-1/2 h-72 flex flex-col justify-center items-center py-10">
           <h1 className="uppercase text-3xl font-bold">Contact Us</h1>
           <p className="text-center font-thin">123 ABS Street, Uni 21, Bangladesh <br/>
 +88 123456789 <br/>
 Mon - Fri: 08:00 - 22:00 <br/>
 Sat - Sun: 10:00 - 23:00</p>
         </div>
-        <div className="bg-[#111827] w-1/2 h-72 flex flex-col justify-center items-center py-10">
+        <div className="bg-[#111827] w-full sm:w-1/2 h-72 flex flex-col justify-center items-center py-10">
         <h1 className="uppercase text-3xl font-bold">Contact Us</h1>
           <p className="font-thin">Join us on social media</p>
           <div className="flex gap-3">
