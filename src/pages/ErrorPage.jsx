@@ -16,7 +16,7 @@ const ErrorPage = () => {
         </p>
 
         <Link
-          className="w-fit bg-orange-500 p-4 rounded text-white block"
+          className="w-fit bg-orange-500 p-2 rounded text-white block"
           to="/"
         >
           Go to Home
