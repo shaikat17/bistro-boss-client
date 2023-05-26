@@ -8,10 +8,12 @@ import "swiper/css/navigation";
 
 // import required modules
 import {Autoplay, Navigation } from "swiper";
+import TitleSection from "./TitleSection";
 
 const Testimonials = () => {
     return (
         <>
+        <TitleSection subTitle="What Our Clients Say" Title="Testimonials" />
       <Swiper navigation={true} modules={[Navigation, Autoplay]} className="mySwiper" autoplay={{
           delay: 2500,
           disableOnInteraction: false,

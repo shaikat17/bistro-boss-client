@@ -11,9 +11,12 @@ import slide1 from "../assets/home/slide1.jpg";
 import slide2 from "../assets/home/slide2.jpg";
 import slide3 from "../assets/home/slide3.jpg";
 import slide4 from "../assets/home/slide4.jpg";
+import TitleSection from "./TitleSection";
 
 const HomeSlider = () => {
   return (
+    <>
+    <TitleSection subTitle="From 11:30am to 10:00pm" Title="Order Online" />
     <Swiper
       slidesPerView={4}
       centeredSlides={false}
@@ -41,6 +44,7 @@ const HomeSlider = () => {
         <h3 className="text-4xl uppercase text-center -mt-16 mb-6 text-white">Deserts</h3>
       </SwiperSlide>
     </Swiper>
+    </>
   );
 };
 

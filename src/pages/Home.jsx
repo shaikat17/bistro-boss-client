@@ -1,3 +1,4 @@
+import CallUs from "../components/CallUs";
 import HomeBanner from "../components/HomeBanner";
 import HomeSlider from "../components/HomeSlider";
 import Testimonials from "../components/Testimonials";
@@ -8,6 +9,7 @@ const Home = () => {
         <>
          <HomeBanner />  
          <HomeSlider /> 
+         <CallUs />
          <Testimonials />
         </>
     );
