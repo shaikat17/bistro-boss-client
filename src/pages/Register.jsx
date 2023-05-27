@@ -5,26 +5,28 @@ import fb from "../assets/icon/facebook.png";
 import gle from "../assets/icon/google.png";
 import github from "../assets/icon/github.png";
 
-const Login = () => {
+const Register = () => {
   return (
     <div
-      className="p-20 h-screen w-full"
+      className="p-10 h-screen w-full"
       style={{ backgroundImage: `url(${authentication})` }}
     >
       <div
         className="flex gap-7 p-4 items-center drop-shadow-xl h-full"
         style={{ backgroundImage: `url(${authentication})` }}
       >
+
         <div className="w-1/2">
-          <img
-            src={authentication2}
-            className="w-full"
-            alt="login page image"
-          />
-        </div>
-        <div className="w-1/2">
-          <h1 className="text-2xl font-bold mb-3 ">Login</h1>
+          <h1 className="text-2xl font-bold mb-3 ">Sign Up</h1>
           <form>
+          <div className="form-control w-full ">
+              <label className="label">User Name</label>
+              <input
+                type="email"
+                placeholder="Enter Your User Name"
+                className="input input-bordered w-full "
+              />
+            </div>
             <div className="form-control w-full ">
               <label className="label">Email</label>
               <input
@@ -42,21 +44,21 @@ const Login = () => {
               />
             </div>
             <div className="form-control w-full ">
-              <label className="label">Enter Captcha</label>
+              <label className="label">Photo URL</label>
               <input
                 type="text"
-                placeholder="Enter Captcha From Above"
+                placeholder="Enter Photo Link"
                 className="input input-bordered w-full "
               />
             </div>
             <button className="bg-[#D1A054] w-full mt-4 py-2 rounded text-white">
-              Log In
+              Sign Up
             </button>
           </form>
           <div className="text-center my-3">
-            <Link to="/register" className="text-[#D1A054]">
-              New Here?
-              <span className="font-medium">Create a New Account</span>
+            <Link to="/login" className="text-[#D1A054]">
+              Already Registered?{" "}
+              <span className="font-medium">Click Here To Login</span>
             </Link>
             <p>Or Sign In with</p>
           </div>
@@ -66,9 +68,16 @@ const Login = () => {
             <img src={github} alt="github" />
           </div>
         </div>
+        <div className="w-1/2">
+          <img
+            src={authentication2}
+            className="w-full"
+            alt="login page image"
+          />
+        </div>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default Register;
