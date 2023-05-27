@@ -19,7 +19,7 @@ const Navbar = () => {
         {navLinks}
       </ul>
     </div>
-    <Link className="btn btn-ghost normal-case text-xl">Bistro Boss</Link>
+    <Link className="btn btn-ghost normal-case text-xl block">Bistro Boss <br /> <span className="tracking-widest font-normal opacity-75">Restaurant</span> </Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 gap-3 items-center text-white">

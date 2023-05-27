@@ -3,7 +3,7 @@ import CallUs from "../components/CallUs";
 import HomeBanner from "../components/HomeBanner";
 import HomeSlider from "../components/HomeSlider";
 import ImgBackSection from "../components/ImgBackSection";
-import OurMenu from "../components/OurMenuHome";
+import OurMenuHome from "../components/OurMenuHome";
 import Testimonials from "../components/Testimonials";
 
 
@@ -13,7 +13,7 @@ const Home = () => {
          <HomeBanner />  
          <HomeSlider /> 
          <AboutBistro />
-         <OurMenu />
+         <OurMenuHome />
          <CallUs />
          <ImgBackSection />
          <Testimonials />

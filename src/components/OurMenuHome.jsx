@@ -3,7 +3,7 @@ import TitleSection from './shared/TitleSection';
 import MenuItem from './shared/MenuItem';
 import useMenu from '../hooks/useMenu';
 
-const OurMenu = () => {
+const OurMenuHome = () => {
     const [menu] = useMenu();
     const popular = menu.filter(item => item.category === 'popular');
     return (
@@ -22,4 +22,4 @@ const OurMenu = () => {
     );
 };
 
-export default OurMenu;
+export default OurMenuHome;
