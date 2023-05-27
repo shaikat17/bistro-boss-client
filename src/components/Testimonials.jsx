@@ -8,7 +8,7 @@ import "swiper/css/navigation";
 
 // import required modules
 import {Autoplay, Navigation } from "swiper";
-import TitleSection from "./TitleSection";
+import TitleSection from "./shared/TitleSection"
 
 const Testimonials = () => {
     return (
