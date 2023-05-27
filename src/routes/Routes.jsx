@@ -3,6 +3,7 @@ import CommonLayout from "../components/CommonLayout";
 import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home";
 import OurMenu from "../pages/OurMenu";
+import Login from "../pages/Login";
 
 export const router = createBrowserRouter([
     {
@@ -25,5 +26,9 @@ export const router = createBrowserRouter([
           element: <OurMenu />
         }
       ]
+    },
+    {
+      path: "/login",
+      element: <Login />
     }
   ]);
