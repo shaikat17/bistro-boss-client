@@ -1,9 +1,9 @@
 
 
-const PageCover = ({ img, Title, SubTitle }) => {
-  return (
-    <div
-      className="p-32 bg-cover bg-no-repeat w-full mb-5"
+const PageMenuCategory = ({img, Title, SubTitle}) => {
+    return (
+        <div
+      className="p-32 bg-cover bg-no-repeat w-full"
       style={{ backgroundImage: `url(${img})` }}
     >
       <div className="hero-overlay p-20 text-white text-center">
@@ -11,7 +11,7 @@ const PageCover = ({ img, Title, SubTitle }) => {
         <h4 className="text-xl uppercase font-extralight">{SubTitle}</h4>
       </div>
     </div>
-  );
+    );
 };
 
-export default PageCover;
+export default PageMenuCategory;
