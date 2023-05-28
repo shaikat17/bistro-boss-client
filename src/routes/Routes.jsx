@@ -5,35 +5,46 @@ import Home from "../pages/Home";
 import OurMenu from "../pages/OurMenu";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import OrderFood from "../pages/OrderFood";
 
 export const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <CommonLayout />,
-      errorElement: <ErrorPage />,
-      children: [
-        {
-            path: "/",
-            element: <Home />
-        }
-      ]
-    },
-    {
-      path: "/our-menu",
-      element: <CommonLayout />,
-      children: [
-        {
-          path: "/our-menu",
-          element: <OurMenu />
-        }
-      ]
-    },
-    {
-      path: "/login",
-      element: <Login />
-    },
-    {
-      path: "/register",
-      element: <Register />
-    }
-  ]);
+  {
+    path: "/",
+    element: <CommonLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+    ],
+  },
+  {
+    path: "/our-menu",
+    element: <CommonLayout />,
+    children: [
+      {
+        path: "/our-menu",
+        element: <OurMenu />,
+      },
+    ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
+  },
+  {
+    path: "/order-food",
+    element: <CommonLayout />,
+    children: [
+      {
+        path: "/order-food",
+        element: <OrderFood />,
+      },
+    ],
+  },
+]);
