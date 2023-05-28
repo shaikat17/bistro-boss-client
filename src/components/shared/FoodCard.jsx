@@ -7,7 +7,7 @@ const FoodCard = ({item}) => {
     }
     return (
         <div className="card bg-base-100 shadow-xl">
-            <figure><img src={image} alt={name} /></figure>
+            <figure><img className="w-full" src={image} alt={name} /></figure>
             <p className="absolute right-0 rounded mr-4 mt-4 px-4 bg-slate-900 text-white">${price}</p>
             <div className="card-body flex flex-col items-center">
                 <h2 className="card-title">{name}</h2>

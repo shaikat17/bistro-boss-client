@@ -6,6 +6,7 @@ import OurMenu from "../pages/OurMenu";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import OrderFood from "../pages/OrderFood";
+import ContactUs from "../pages/ContactUs";
 
 export const router = createBrowserRouter([
   {
@@ -17,34 +18,27 @@ export const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
-    ],
-  },
-  {
-    path: "/our-menu",
-    element: <CommonLayout />,
-    children: [
       {
         path: "/our-menu",
         element: <OurMenu />,
       },
-    ],
-  },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/register",
-    element: <Register />,
-  },
-  {
-    path: "/order-food",
-    element: <CommonLayout />,
-    children: [
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
+      },
       {
         path: "/order-food",
         element: <OrderFood />,
       },
+      {
+        path: "/contact-us",
+        element: <ContactUs />
+      }
     ],
   },
+  
 ]);

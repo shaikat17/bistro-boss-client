@@ -1,11 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import authentication from "../assets/others/authentication.png";
 import authentication2 from "../assets/others/authentication2.png";
 import fb from "../assets/icon/facebook.png";
 import gle from "../assets/icon/google.png";
 import github from "../assets/icon/github.png";
 
+
 const Login = () => {
+  let navigate = useNavigate();
+  let location = useLocation();
+
+  let from = location.state?.from?.pathname || "/";
+
+  // navigate(from, { replace: true });
+  
   return (
     <div
       className="p-20 h-screen w-full"
