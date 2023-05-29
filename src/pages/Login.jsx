@@ -4,16 +4,41 @@ import authentication2 from "../assets/others/authentication2.png";
 import fb from "../assets/icon/facebook.png";
 import gle from "../assets/icon/google.png";
 import github from "../assets/icon/github.png";
-
+import { LoadCanvasTemplate, loadCaptchaEnginge } from "react-simple-captcha";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { validateCaptcha } from "react-simple-captcha"
 
 const Login = () => {
+  const [btnDisable, setBtnDisable] = useState(true);
+  const [captchaChng, setCaptchaChng] = useState(false)
   let navigate = useNavigate();
   let location = useLocation();
+
+  const { register, reset, handleSubmit } = useForm();
 
   let from = location.state?.from?.pathname || "/";
 
   // navigate(from, { replace: true });
-  
+  useEffect(() => {
+    loadCaptchaEnginge(6);
+  }, []);
+
+  const formSubmit = (data) => {
+    console.log(data);
+  };
+
+  const handleCaptcha = (e) => {
+    const user_captcha_value = e.target.value;
+    if (validateCaptcha(user_captcha_value)) {
+      setBtnDisable(false)
+      console.log("validate captcha")
+    } else {
+      setBtnDisable(true);
+      console.log("captcha not validate");
+    }
+  };
+
   return (
     <div
       className="p-20 h-screen w-full"
@@ -32,7 +57,7 @@ const Login = () => {
         </div>
         <div className="w-1/2">
           <h1 className="text-2xl font-bold mb-3 ">Login</h1>
-          <form>
+          <form onSubmit={handleSubmit(formSubmit)}>
             <div className="form-control w-full ">
               <label className="label">Email</label>
               <input
@@ -51,13 +76,18 @@ const Login = () => {
             </div>
             <div className="form-control w-full ">
               <label className="label">Enter Captcha</label>
+              <LoadCanvasTemplate />
               <input
                 type="text"
                 placeholder="Enter Captcha From Above"
                 className="input input-bordered w-full "
+                onBlur={handleCaptcha}
               />
             </div>
-            <button className="bg-[#D1A054] w-full mt-4 py-2 rounded text-white">
+            <button
+              disabled={btnDisable}
+              className="bg-[#D1A054] w-full mt-4 py-2 rounded text-white"
+            >
               Log In
             </button>
           </form>
