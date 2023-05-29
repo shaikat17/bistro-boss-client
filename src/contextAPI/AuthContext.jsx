@@ -76,7 +76,9 @@ const updateUserProfile = (user = user, uName, photoUrl) => {
     createUser,
     loading,
     setLoading,
-    user
+    user,
+    updateUserProfile,
+    logOut
   }}>
     {children}</AuthContext.Provider>;
 };
