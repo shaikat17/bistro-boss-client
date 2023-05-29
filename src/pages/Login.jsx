@@ -8,6 +8,7 @@ import { LoadCanvasTemplate, loadCaptchaEnginge } from "react-simple-captcha";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { validateCaptcha } from "react-simple-captcha"
+import { useGlobalContext } from "../contextAPI/AuthContext";
 
 const Login = () => {
   const [btnDisable, setBtnDisable] = useState(true);
@@ -15,7 +16,9 @@ const Login = () => {
   let navigate = useNavigate();
   let location = useLocation();
 
-  const { register, reset, handleSubmit } = useForm();
+  const {signin, setLoading} = useGlobalContext()
+
+  const { register, reset, handleSubmit, formState: { errors }, } = useForm();
 
   let from = location.state?.from?.pathname || "/";
 
@@ -26,6 +29,17 @@ const Login = () => {
 
   const formSubmit = (data) => {
     console.log(data);
+    signin(data.email, data.pass)
+      .then((result) => {
+        const loggedUser = result.user;
+        // localStorage.setItem('userEmail', data.email)
+        console.log(loggedUser);
+        navigate(from, { replace: true });
+      })
+      .catch((err) => {
+        console.log(err);
+        setLoading(false);
+      });
   };
 
   const handleCaptcha = (e) => {
@@ -62,17 +76,25 @@ const Login = () => {
               <label className="label">Email</label>
               <input
                 type="email"
+                {...register("email", { required: true })}
                 placeholder="Enter Your Email"
-                className="input input-bordered w-full "
+                className="input input-bordered w-full"
               />
+              {errors.email?.type === "required" && (
+                <p className="text-red-500">User Email is Required</p>
+              )}
             </div>
             <div className="form-control w-full ">
               <label className="label">Password</label>
               <input
                 type="password"
+                {...register("pass", { required: true })}
                 placeholder="Enter Your Password"
                 className="input input-bordered w-full "
               />
+              {errors.pass?.type === "required" && (
+                <p className="text-red-500">User Password is Required</p>
+              )}
             </div>
             <div className="form-control w-full ">
               <label className="label">Enter Captcha</label>
