@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { validateCaptcha } from "react-simple-captcha"
 import { useGlobalContext } from "../contextAPI/AuthContext";
+import Swal from 'sweetalert2'
 
 const Login = () => {
   const [btnDisable, setBtnDisable] = useState(true);
@@ -48,6 +49,13 @@ const Login = () => {
       setBtnDisable(false)
       console.log("validate captcha")
     } else {
+      Swal.fire({
+        title: 'Captcha Not Matched. Try Again...',
+        icon: 'error',
+        position: "center",
+        showConfirmButton: false,
+        timer: 1500
+      })
       setBtnDisable(true);
       console.log("captcha not validate");
     }

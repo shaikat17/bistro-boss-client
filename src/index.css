@@ -27,3 +27,7 @@
 .react-tabs {
   text-align: center !important;
 }
+
+.carousel-status {
+  display: none;
+}
