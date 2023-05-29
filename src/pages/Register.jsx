@@ -4,8 +4,15 @@ import authentication2 from "../assets/others/authentication2.png";
 import fb from "../assets/icon/facebook.png";
 import gle from "../assets/icon/google.png";
 import github from "../assets/icon/github.png";
+import { useForm } from "react-hook-form";
 
 const Register = () => {
+  const { register, handleSubmit, reset } = useForm();
+
+  const formSubmit = (data) => {
+    console.log(data)
+    reset()
+  }
   return (
     <div
       className="p-10 h-screen w-full"
@@ -18,11 +25,13 @@ const Register = () => {
 
         <div className="w-1/2">
           <h1 className="text-2xl font-bold mb-3 ">Sign Up</h1>
-          <form>
+          <form onSubmit={handleSubmit(formSubmit)}>
           <div className="form-control w-full ">
               <label className="label">User Name</label>
               <input
-                type="email"
+                type="text"
+                name="userName"
+                {...register("userName")}
                 placeholder="Enter Your User Name"
                 className="input input-bordered w-full "
               />
@@ -31,6 +40,8 @@ const Register = () => {
               <label className="label">Email</label>
               <input
                 type="email"
+                name="userEmail"
+                {...register("userEmail")}
                 placeholder="Enter Your Email"
                 className="input input-bordered w-full "
               />
@@ -39,6 +50,8 @@ const Register = () => {
               <label className="label">Password</label>
               <input
                 type="password"
+                name="pass"
+                {...register("pass")}
                 placeholder="Enter Your Password"
                 className="input input-bordered w-full "
               />
@@ -47,6 +60,7 @@ const Register = () => {
               <label className="label">Photo URL</label>
               <input
                 type="text"
+                {...register("photoURL")}
                 placeholder="Enter Photo Link"
                 className="input input-bordered w-full "
               />
