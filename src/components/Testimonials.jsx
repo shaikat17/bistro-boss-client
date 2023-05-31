@@ -1,3 +1,4 @@
+import { Rating } from "@smastrom/react-rating";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -10,6 +11,7 @@ import "swiper/css/navigation";
 import {Autoplay, Navigation } from "swiper";
 import TitleSection from "./shared/TitleSection"
 
+
 const Testimonials = () => {
     return (
         <>
@@ -20,24 +22,28 @@ const Testimonials = () => {
         }} >
         <SwiperSlide>
             <div className="flex flex-col items-center p-10 gap-3 mx-10">
+                 <Rating style={{ maxWidth: 150 }} value={4} />
             <p className="text-base font-light">Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
         <h3 className="font-bold">Jane Doe</h3>
             </div>
         </SwiperSlide>
         <SwiperSlide>
             <div className="flex flex-col items-center p-10 gap-3 mx-10">
+            <Rating style={{ maxWidth: 150 }} value={2} />
             <p className="text-base font-light">Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
         <h3 className="font-bold">Jane Doe</h3>
             </div>
         </SwiperSlide>
         <SwiperSlide>
             <div className="flex flex-col items-center p-10 gap-3 mx-10">
+            <Rating style={{ maxWidth: 150 }} value={3} />
             <p className="text-base font-light">Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
         <h3 className="font-bold">Jane Doe</h3>
             </div>
         </SwiperSlide>
         <SwiperSlide>
             <div className="flex flex-col items-center p-10 gap-3 mx-10">
+            <Rating style={{ maxWidth: 150 }} value={5} />
             <p className="text-base font-light">Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
         <h3 className="font-bold">Jane Doe</h3>
             </div>
